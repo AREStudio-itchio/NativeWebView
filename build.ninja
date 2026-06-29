@@ -1,0 +1,3 @@
+clang++ -shared -o NativeWebView.dll NativeWebView.cpp -luser32 -lkernel32
+clang++ -shared NativeWebView.cpp -o NativeWebView.dll "-Wl,--out-implib,libNativeWebView.dll.a"
+clang++ -shared NativeWebView.cpp -o NativeWebView.dll -fuse-ld=lld "-Wl,/IMPLIB:NativeWebView.lib"
